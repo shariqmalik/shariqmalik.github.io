@@ -1,0 +1,15 @@
+- name: Threat Modeling
+  percentage: 50
+  color: success
+- name: Adversary Simulation
+  percentage: 80
+  color: info
+- name: Social Engineering
+  percentage: 90
+  color: danger
+- name: Exploit Development
+  percentage: 70
+  color: primary
+- name: Post-Exploitation
+  percentage: 85
+  color: secondary

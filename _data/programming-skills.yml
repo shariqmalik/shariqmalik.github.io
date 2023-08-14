@@ -1,0 +1,15 @@
+- name: Python
+  percentage: 90
+  color: success 
+
+- name: PHP
+  percentage: 65
+  color: warning
+
+- name: C#
+  percentage: 50
+  color: info
+
+- name: C++
+  percentage: 50
+  color: secondary

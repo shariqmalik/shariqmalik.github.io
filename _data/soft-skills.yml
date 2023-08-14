@@ -1,0 +1,15 @@
+- name: Communication Skills
+  percentage: 95
+  color: info
+
+- name: Teamwork
+  percentage: 90
+  color: success
+
+- name: Leadership
+  percentage: 90
+  color: primary
+
+- name: Problem Solving
+  percentage: 90
+  color: danger
