@@ -58,7 +58,7 @@ collections:
 
 ### Disqus ###
 disqus:
-  shortname: your-website-shortname                     # Your website Shortname on disqus
+  shortname: your-disqus-shortname                     # Your website Shortname on disqus
 
 
 ### Analytics ###
