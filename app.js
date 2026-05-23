@@ -691,6 +691,19 @@ function initTerminal(config) {
 
   if (!terminal || !input) return;
 
+  const welcomeMsg = document.getElementById("term-welcome-msg");
+  if (welcomeMsg && config.systemStatus.welcomeBanner) {
+    const bannerText = Array.isArray(config.systemStatus.welcomeBanner)
+      ? config.systemStatus.welcomeBanner.join("\n")
+      : config.systemStatus.welcomeBanner;
+    welcomeMsg.innerHTML = `
+<span style="color: var(--accent-red); font-weight: bold; line-height: 1.1; display: block; margin-bottom: 12px; font-size: 0.78rem; text-shadow: var(--glow-shadow-small); letter-spacing: 0.5px;">${bannerText}</span>
+Welcome to Shariq Shell [Version 2.4.9-red]
+(c) 2026 Shariq Malik. Security Core Active.
+
+Type 'help' to list available command payloads.`;
+  }
+
   // Keep input focused when clicking anywhere inside the terminal panel
   panel.addEventListener("click", () => {
     input.focus();
@@ -906,8 +919,13 @@ Available command payloads:
       break;
 
     case "clear":
+      const bannerText = Array.isArray(config.systemStatus.welcomeBanner)
+        ? config.systemStatus.welcomeBanner.join("\n")
+        : config.systemStatus.welcomeBanner;
+      const banner = bannerText ? `
+<span style="color: var(--accent-red); font-weight: bold; line-height: 1.1; display: block; margin-bottom: 12px; font-size: 0.78rem; text-shadow: var(--glow-shadow-small); letter-spacing: 0.5px;">${bannerText}</span>` : "";
       termBody.innerHTML = `
-<div class="terminal-welcome" id="term-welcome-msg">
+<div class="terminal-welcome" id="term-welcome-msg">${banner}
 Welcome to Shariq Shell [Version 2.4.9-red]
 (c) 2026 Shariq Malik. Security Core Active.
 

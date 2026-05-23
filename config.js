@@ -15,7 +15,17 @@ window.portfolioConfig = {
     threatLevel: "MINIMAL",
     firewallStatus: "ACTIVE",
     decryptionKey: "AES-256-GCM",
-    agentVersion: "v4.0.9-red"
+    agentVersion: "v4.0.9-red",
+    // Custom ASCII Art Banner shown on terminal startup and clear command.
+    // Can be defined as a single string (using \n) or an array of lines.
+    // Note: Backslashes (\) must be double-escaped (\\) within strings.
+    welcomeBanner: [
+      " __    __     _                            _ ",
+      "/ / /\\ \\ \\___| | ___ ___  _ __ ___   ___  / \\",
+      "\\ \\/  \\/ / _ \\ |/ __/ _ \\| '_ ` _ \\ / _ \\/  /",
+      " \\  /\\  /  __/ | (_| (_) | | | | | |  __/\\_/ ",
+      "  \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___\\/   "
+    ]
   },
   socials: {
     email: "malikshariq07@gmail.com",
