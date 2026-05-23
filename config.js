@@ -187,29 +187,6 @@ window.portfolioConfig = {
     "Acknowledged by ESET SMART Security™ for reporting a vulnerability."
   ],
   articles: [
-    {
-      title: "Bypassing Windows EDRs Using Custom Hoaxshell Configurations",
-      description: "A technical walkthrough of how security researchers can use HTTP(S) channels, obfuscated payloads, and custom shell headers to test endpoint protection detection thresholds.",
-      platform: "Medium",
-      url: "https://medium.com",
-      date: "May 2026",
-      tags: ["EDR Evasion", "Hoaxshell", "Offensive Sec", "Windows"]
-    },
-    {
-      title: "Stealth Reconnaissance: Mapping Active Directory Trust Networks",
-      description: "A guide on using native commands and BloodHound to map out domain controllers and network privileges during red team engagements without raising SIEM alerts.",
-      platform: "Dev.to",
-      url: "https://dev.to",
-      date: "April 2026",
-      tags: ["Active Directory", "Stealth Recon", "Red Teaming", "BloodHound"]
-    },
-    {
-      title: "Python vs. Go: Building High-Speed Security Automation Tools",
-      description: "Comparing runtime speed, concurrency models, and library support when developing custom asset scanners and API validation scripts.",
-      platform: "Hashnode",
-      url: "https://hashnode.com",
-      date: "March 2026",
-      tags: ["Python", "Go", "Automation", "Tooling"]
-    }
+    
   ]
 };
