@@ -1,12 +1,19 @@
-# Local Site Directories
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+# IDE / Editor folders
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Ruby Gems
-.bundle
-Gemfile.lock
+# OS metadata files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 
-# Log Files
+# Temporary files & log backups
 *.log
+*.tmp
+*~

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>Shariq Malik | Senior Security Consultant and Red Teamer</title>
+  <meta name="description" content="Portfolio of Shariq Malik, a Senior Security Engineer, Red Teamer, and Bug Bounty hunter. Exploring cybersecurity automation, penetration testing, and ethical hacking.">
+  <meta name="keywords" content="Shariq Malik, Cybersecurity, Security Engineer, Red Teamer, Penetration Testing, Bug Bounty, Hoaxshell, Wazuh, ELK Stack, Security Automation">
+  <meta name="author" content="Shariq Malik">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="cyber_avatar.png">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- FontAwesome for Premium Iconography -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Preload Config Data -->
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+  <!-- Cyberpunk Background Layers -->
+  <div id="particles-js"></div>
+  <div class="grid-bg-overlay" id="grid-bg"></div>
+  <div class="scanlines-overlay" id="crt-scanlines"></div>
+
+  <!-- Main Application Wrapper -->
+  <div class="app-container" id="app-wrapper">
+    
+    <!-- Top System Status Header -->
+    <header class="status-bar" id="system-status-bar">
+      <div class="system-tag" id="system-tag-container">
+        <span class="status-blink active-green" id="pulse-indicator"></span>
+        <span id="system-hostname">SEC-CORE-SHARIQ::ACTIVE</span>
+      </div>
+      <div class="metrics-container" id="system-metrics">
+        <div class="metric-item" id="metric-latency">
+          <span class="metric-label">PING:</span>
+          <span class="metric-val sec-green" id="ping-value">14ms</span>
+        </div>
+        <div class="metric-item" id="metric-threat">
+          <span class="metric-label">THREAT:</span>
+          <span class="metric-val" id="threat-value">MINIMAL</span>
+        </div>
+        <div class="metric-item" id="metric-firewall">
+          <span class="metric-label">FIREWALL:</span>
+          <span class="metric-val sec-green" id="firewall-value">ACTIVE</span>
+        </div>
+        <div class="metric-item" id="metric-sec-rating">
+          <span class="metric-label">CYBER_CORE:</span>
+          <span class="metric-val" id="version-value">v4.09-red</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Workspace Split Grid -->
+    <main class="main-layout" id="workspace-layout">
+      
+      <!-- Left Panel: Cyber Dashboard (GUI) -->
+      <section class="dashboard-panel" id="gui-dashboard-panel">
+        
+        <!-- Cyber Corner Brackets -->
+        <div class="cyber-decor decor-tl"></div>
+        <div class="cyber-decor decor-tr"></div>
+        <div class="cyber-decor decor-bl"></div>
+        <div class="cyber-decor decor-br"></div>
+
+        <!-- Navigation Tabs -->
+        <nav class="dashboard-nav" id="dashboard-navigation" role="tablist">
+          <button class="nav-btn active" id="tab-overview" role="tab" aria-selected="true" aria-controls="panel-overview">
+            <i class="fa-solid fa-terminal"></i> OVERVIEW
+          </button>
+          <button class="nav-btn" id="tab-experience" role="tab" aria-selected="false" aria-controls="panel-experience">
+            <i class="fa-solid fa-server"></i> OPS_LOG
+          </button>
+          <button class="nav-btn" id="tab-projects" role="tab" aria-selected="false" aria-controls="panel-projects">
+            <i class="fa-solid fa-folder-open"></i> PAYLOADS
+          </button>
+          <button class="nav-btn" id="tab-skills" role="tab" aria-selected="false" aria-controls="panel-skills">
+            <i class="fa-solid fa-shield-halved"></i> MATRIX
+          </button>
+          <button class="nav-btn" id="tab-certs" role="tab" aria-selected="false" aria-controls="panel-certs">
+            <i class="fa-solid fa-award"></i> CLEARANCE
+          </button>
+          <button class="nav-btn" id="tab-articles" role="tab" aria-selected="false" aria-controls="panel-articles">
+            <i class="fa-solid fa-book"></i> INTEL
+          </button>
+          <button class="nav-btn" id="tab-contact" role="tab" aria-selected="false" aria-controls="panel-contact">
+            <i class="fa-solid fa-satellite-dish"></i> COMMS
+          </button>
+        </nav>
+
+        <!-- Dashboard Content Screen -->
+        <div class="dashboard-content" id="dashboard-content-screen">
+          
+          <!-- [01] OVERVIEW SECTION -->
+          <div class="panel-section active" id="panel-overview" role="tabpanel">
+            <div class="hero-header" id="hero-header-area">
+              <div class="avatar-wrapper" id="hero-avatar-container">
+                <img src="cyber_avatar.png" alt="Shariq Malik Avatar" class="cyber-avatar" id="avatar-image">
+                <div class="cyber-avatar-glitch" id="avatar-glitch-layer"></div>
+              </div>
+              <div class="hero-meta" id="hero-meta-details">
+                <h1 id="hero-name-heading">SHARIQ <span>MALIK</span></h1>
+                <div class="role-tag" id="hero-role-title">Loading system details...</div>
+                <div class="sub-tagline" id="hero-subtagline">Initializing modules...</div>
+                <a href="Shariq_CV.pdf" download="Shariq_Malik_CV.pdf" class="form-btn" id="download-cv-btn" style="display:inline-flex; align-items:center; gap:8px; text-decoration:none; margin-top:12px; padding:6px 15px; font-size:0.75rem; width:auto; text-shadow:none;">
+                  <i class="fa-solid fa-file-arrow-down"></i> DOWNLOAD_RESUME
+                </a>
+              </div>
+            </div>
+            
+            <div class="terminal-block" id="overview-welcome-block">
+              <div class="terminal-title" id="overview-greeting">SYSTEM DECRYPTION</div>
+              <div class="bio-paragraph" id="overview-bio-text">
+                Parsing biographical data stream...
+              </div>
+            </div>
+          </div>
+
+          <!-- [02] EXPERIENCE SECTION (OPERATION LOGS) -->
+          <div class="panel-section" id="panel-experience" role="tabpanel">
+            <div class="terminal-block" id="exp-title-block">
+              <div class="terminal-title">OPERATION LOGS</div>
+              <p class="bio-paragraph">Historical tracking records of system integration, team leadership, and tactical vulnerability operations.</p>
+            </div>
+            <div class="timeline" id="experience-timeline">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- [03] PROJECTS SECTION (PAYLOAD INVENTORY) -->
+          <div class="panel-section" id="panel-projects" role="tabpanel">
+            <div class="terminal-block" id="proj-title-block">
+              <div class="terminal-title">PAYLOAD INVENTORY</div>
+              <p class="bio-paragraph">Open source utility modules, security integrations, and offensive exploitation shells.</p>
+            </div>
+            <div class="projects-grid" id="projects-container-grid">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- [04] SKILLS SECTION (CYBER MATRIX) -->
+          <div class="panel-section" id="panel-skills" role="tabpanel">
+            <div class="terminal-block" id="skills-title-block">
+              <div class="terminal-title">THREAT CAPABILITY MATRIX</div>
+              <p class="bio-paragraph">Quantitative levels of defense orchestration, vulnerability testing, and tool development proficiency.</p>
+            </div>
+            <div class="skills-grid" id="skills-container-grid">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- [05] CERTIFICATIONS SECTION (CLEARANCES) -->
+          <div class="panel-section" id="panel-certs" role="tabpanel">
+            <div class="terminal-block" id="certs-title-block">
+              <div class="terminal-title">SECURITY CLEARANCES</div>
+              <p class="bio-paragraph">Industry certifications and verified expertise credentials.</p>
+            </div>
+            <div class="certs-list" id="certifications-container-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- [06] ARTICLES SECTION (INTEL WRITE-UPS) -->
+          <div class="panel-section" id="panel-articles" role="tabpanel">
+            <div class="terminal-block" id="articles-title-block">
+              <div class="terminal-title">PUBLISHED INTEL / WRITE-UPS</div>
+              <p class="bio-paragraph">Threat research logs, exploit papers, and articles published on developer platforms.</p>
+            </div>
+            <div class="projects-grid" id="articles-container-grid">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- [06] CONTACT SECTION (COMMS CHANNEL) -->
+          <div class="panel-section" id="panel-contact" role="tabpanel">
+            <div class="terminal-block" id="contact-title-block">
+              <div class="terminal-title">COMMS TERMINAL</div>
+              <p class="bio-paragraph">Open a communication channel or contact via verified encrypted networks.</p>
+            </div>
+            <div class="comms-grid" id="comms-grid-container">
+              <!-- Info column -->
+              <div class="comms-info-col" id="contact-info-list">
+                <!-- Dynamically populated -->
+              </div>
+              
+              <!-- Form column -->
+              <div class="comms-form-col" id="contact-form-area">
+                <form class="comms-form" id="cyber-contact-form" action="javascript:void(0);">
+                  <div class="form-group">
+                    <label for="form-sender-name">SENDER NAME</label>
+                    <input type="text" class="form-input" id="form-sender-name" placeholder="E.g., OPERATOR_ALPHA" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="form-sender-email">SENDER EMAIL</label>
+                    <input type="email" class="form-input" id="form-sender-email" placeholder="E.g., operator@sec.org" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="form-message">MESSAGE BLOCK</label>
+                    <textarea class="form-textarea" id="form-message" placeholder="Type message payload..." required></textarea>
+                  </div>
+                  <button type="submit" class="form-btn" id="form-submit-btn">TRANSMIT PACKET</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Right Panel: Interactive Terminal Interface (CLI) -->
+      <section class="terminal-panel" id="cli-console-panel">
+        
+        <!-- Cyber Corner Brackets -->
+        <div class="cyber-decor decor-tl"></div>
+        <div class="cyber-decor decor-tr"></div>
+        <div class="cyber-decor decor-bl"></div>
+        <div class="cyber-decor decor-br"></div>
+
+        <!-- Terminal Header -->
+        <div class="terminal-header" id="terminal-top-header">
+          <div class="terminal-title-text" id="terminal-header-title">
+            <i class="fa-solid fa-code"></i> SHARIQ-SHELL v2.4 (TYPE 'help' FOR COMMANDS)
+          </div>
+          <div class="terminal-actions" id="terminal-window-buttons">
+            <div class="terminal-dot-btn close"></div>
+            <div class="terminal-dot-btn minimize"></div>
+            <div class="terminal-dot-btn maximize"></div>
+          </div>
+        </div>
+
+        <!-- Terminal Output Area -->
+        <div class="terminal-body" id="terminal-output-body">
+          <div class="terminal-welcome" id="term-welcome-msg">
+Welcome to Shariq Shell [Version 2.4.9-red]
+(c) 2026 Shariq Malik. Security Core Active.
+
+Type 'help' to list available command payloads.
+          </div>
+          <!-- Appends log logs here -->
+        </div>
+
+        <!-- Terminal Command Input -->
+        <div class="terminal-input-row" id="terminal-input-bar">
+          <span class="terminal-prompt" id="terminal-prompt-text">> </span>
+          <input type="text" class="terminal-input" id="terminal-cmd-input" autocomplete="off" autofocus placeholder="Type command here...">
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Portfolio Logic Engine -->
+  <script src="app.js"></script>
+</body>
+</html>
