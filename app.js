@@ -543,10 +543,20 @@ function initArticles(config) {
 function initTabs() {
   const tabs = document.querySelectorAll(".nav-btn");
   const sections = document.querySelectorAll(".panel-section");
+  const navContainer = document.getElementById("dashboard-navigation");
 
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
       const targetId = tab.getAttribute("aria-controls");
+      const isMobile = window.innerWidth <= 600;
+
+      // Toggle menu if active tab is clicked on mobile screen
+      if (isMobile && tab.classList.contains("active")) {
+        if (navContainer) {
+          navContainer.classList.toggle("menu-expanded");
+        }
+        return;
+      }
 
       // Deactivate all
       tabs.forEach(t => {
@@ -568,7 +578,19 @@ function initTabs() {
           animateSkillsBars();
         }
       }
+
+      // Automatically collapse the navigation dropdown after selecting a tab
+      if (isMobile && navContainer) {
+        navContainer.classList.remove("menu-expanded");
+      }
     });
+  });
+
+  // Close collapsible menu when clicking anywhere else outside of it
+  document.addEventListener("click", (e) => {
+    if (window.innerWidth <= 600 && navContainer && !navContainer.contains(e.target)) {
+      navContainer.classList.remove("menu-expanded");
+    }
   });
 }
 
@@ -697,7 +719,7 @@ function initTerminal(config) {
       ? config.systemStatus.welcomeBanner.join("\n")
       : config.systemStatus.welcomeBanner;
     welcomeMsg.innerHTML = `
-<span style="color: var(--accent-red); font-weight: bold; line-height: 1.1; display: block; margin-bottom: 12px; font-size: 0.78rem; text-shadow: var(--glow-shadow-small); letter-spacing: 0.5px;">${bannerText}</span>
+<span class="terminal-welcome-banner">${bannerText}</span>
 Welcome to Shariq Shell [Version 2.4.9-red]
 (c) 2026 Shariq Malik. Security Core Active.
 
@@ -923,7 +945,7 @@ Available command payloads:
         ? config.systemStatus.welcomeBanner.join("\n")
         : config.systemStatus.welcomeBanner;
       const banner = bannerText ? `
-<span style="color: var(--accent-red); font-weight: bold; line-height: 1.1; display: block; margin-bottom: 12px; font-size: 0.78rem; text-shadow: var(--glow-shadow-small); letter-spacing: 0.5px;">${bannerText}</span>` : "";
+<span class="terminal-welcome-banner">${bannerText}</span>` : "";
       termBody.innerHTML = `
 <div class="terminal-welcome" id="term-welcome-msg">${banner}
 Welcome to Shariq Shell [Version 2.4.9-red]

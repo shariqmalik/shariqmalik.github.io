@@ -49,11 +49,13 @@
   padding: 0;
 }
 
-body {
+html, body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   line-height: 1.5;
   height: 100vh;
   position: relative;
@@ -210,6 +212,7 @@ body {
   flex: 1;
   gap: 15px;
   min-height: 0; /* Important for flex container sizing */
+  min-width: 0; /* Prevent grid column expansion from children */
 }
 
 /* Dashboard Panel (Left) */
@@ -221,6 +224,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 0;
+  min-width: 0; /* Prevent horizontal stretching */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
   position: relative;
 }
@@ -247,6 +251,7 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch; /* Smooth inertial scroll on mobile browsers */
 }
 .dashboard-nav::-webkit-scrollbar {
   display: none;
@@ -284,6 +289,7 @@ body {
   flex: 1;
   padding: 25px;
   overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal container shifts */
   position: relative;
   min-height: 0;
 }
@@ -917,6 +923,7 @@ body {
   flex-direction: column;
   position: relative;
   min-height: 0;
+  min-width: 0; /* Prevent horizontal stretching */
 }
 
 .terminal-header {
@@ -959,6 +966,7 @@ body {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scroll shifts */
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1002,8 +1010,20 @@ body {
   border-bottom: 1px dashed rgba(255, 0, 60, 0.15);
   padding-bottom: 10px;
   margin-bottom: 10px;
-  white-space: pre;
+  white-space: pre-wrap; /* Allow standard text lines to wrap on smaller screens */
   font-family: var(--font-mono);
+}
+
+.terminal-welcome-banner {
+  color: var(--accent-red);
+  font-weight: bold;
+  line-height: 1.1;
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.78rem;
+  text-shadow: var(--glow-shadow-small);
+  letter-spacing: 0.5px;
+  white-space: pre; /* Force ASCII art spaces and wraps to match layout */
 }
 
 .term-cmd-log {
@@ -1115,30 +1135,44 @@ body {
 }
 
 @media (max-width: 600px) {
+  .app-container {
+    padding: 8px;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .main-layout {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+  }
+
   .status-bar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 8px;
     padding: 12px;
   }
   
   .metrics-container {
     flex-wrap: wrap;
-    gap: 10px 15px;
+    gap: 8px 16px;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     font-size: 0.7rem;
   }
   
   .hero-header {
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     gap: 15px;
   }
   
   .avatar-wrapper {
-    align-self: flex-start;
+    align-self: center;
     height: 120px;
     width: 120px;
   }
@@ -1148,8 +1182,51 @@ body {
   }
   
   .nav-btn {
-    padding: 12px 14px;
-    font-size: 0.7rem;
+    display: flex !important; /* Force flex alignment for icon, text, and toggle status indicator */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    font-size: 0.8rem;
+    border-right: none !important; /* Stacked elements do not need right borders */
+    border-bottom: var(--border-neon-dim) !important;
+    text-align: left;
+  }
+
+  .dashboard-nav {
+    display: flex;
+    flex-direction: column; /* Stack tabs vertically on mobile screens */
+    width: 100%;
+    max-width: 100%;
+    border-bottom: none;
+    background: rgba(10, 4, 5, 0.95);
+    position: relative;
+    z-index: 100;
+  }
+
+  /* When collapsed (default on mobile): hide all inactive tabs */
+  .dashboard-nav:not(.menu-expanded) .nav-btn:not(.active) {
+    display: none !important;
+  }
+
+  /* Cyberpunk indicators appended to active tab when collapsed/expanded */
+  /* Collapsed indicator on active tab */
+  .dashboard-nav:not(.menu-expanded) .nav-btn.active::after {
+    content: '▼';
+    font-size: 0.75rem;
+    color: var(--accent-red);
+    margin-left: auto;
+    font-family: var(--font-mono);
+  }
+
+  .dashboard-nav.menu-expanded .nav-btn.active::after {
+    content: '▲';
+    font-size: 0.75rem;
+    color: var(--accent-red);
+    margin-left: auto;
+    font-family: var(--font-mono);
   }
   
   .dashboard-panel {
@@ -1162,8 +1239,13 @@ body {
   }
   
   .terminal-body {
-    font-size: 0.72rem;
-    padding: 12px;
+    font-size: clamp(0.58rem, 2.4vw, 0.82rem); /* Dynamic fluid scaling prevents ASCII table overflow */
+    padding: 10px 8px;
+  }
+
+  .terminal-welcome-banner {
+    font-size: clamp(0.55rem, 2.5vw, 0.78rem); /* Scale ASCII art dynamically to fit mobile viewport */
+    letter-spacing: 0.2px;
   }
 }
 
